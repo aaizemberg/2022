@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedding Vega-Lite</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+  </head>
+  <body>
+    <div id="tw"></div>
+
+    <script type="text/javascript">
+      var vlspec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/aaizemberg/2022/main/tw_edenor.csv" },
+  "config": {
+    "circle": {"size" : 50, "color": "steelblue"}
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "Number of Likes", "type": "quantitative", "title":"likes"},
+    "y": {"field": "Number of Retweets", "type": "quantitative", "title":"RT"},
+    "tooltip": {"field": "Content", "type": "nominal"}
+  }
+};
+      vegaEmbed('div#tw', vlspec);
+    </script>
+  </body>
+</html>
