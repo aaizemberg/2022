@@ -5,25 +5,49 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@[VERSION]"></script>
   </head>
   <body>
-    
     <div id="vis"></div>
-
     <script>
-      
       var vl = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/aaizemberg/2022/main/tw_bc.csv"},
-  "mark": {"type": "circle", "tooltip": {"content": "data"}},
-  "encoding": {
-    "x": {"field": "Number of Likes", "type": "quantitative"},
-    "y": {"field": "Number of Retweets", "type": "quantitative"}
-  }
-};
-
-vegaEmbed('div#vis', vl);
-      
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": 500,
+        "height": 500,
+        "data": {
+          "url": "https://raw.githubusercontent.com/aaizemberg/2022/main/tw_bc.csv"
+        },
+        "params": [{
+          "name": "grid",
+          "select": "interval",
+          "bind": "scales"
+        }],
+        "mark": {
+          "type": "circle",
+          "size": 50
+        },
+        "encoding": {
+          "x": {
+            "field": "Number of Likes",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Number of Retweets",
+            "type": "quantitative"
+          },
+          "tooltip": [{
+            "field": "Number of Likes",
+            "type": "quantitative"
+          }, {
+            "field": "Number of Retweets",
+            "type": "quantitative"
+          }, {
+            "field": "Content",
+            "type": "nominal"
+          }, ]
+        }
+      };
+      vegaEmbed('div#vis', vl);
     </script>
   </body>
 </html>
