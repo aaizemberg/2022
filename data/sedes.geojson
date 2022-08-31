@@ -7,6 +7,6 @@
     { "type": "Feature", "properties": { "sede": "SDR" }, "geometry": { "type": "Point", "coordinates": [ -58.406390, -34.641711 ] } },
     { "type": "Feature", "properties": { "sede": "SDF" }, "geometry": { "type": "Point", "coordinates": [ -58.373846, -34.605532 ] } },   
     { "type": "Feature", "properties": { "sede": "Madero" }, "geometry": { "type": "Point", "coordinates": [ -58.367906, -34.603035 ] } },
-    { "type": "Feature", "properties": { "sede": "Parque de la Innovación" }, "geometry": { "type": "Point", "coordinates": [ -58.45308, -34.54569 ] } }
+    { "type": "Feature", "properties": { "sede": "Parque de la Innovacion" }, "geometry": { "type": "Point", "coordinates": [ -58.45308, -34.54569 ] } }
   ]
 }
